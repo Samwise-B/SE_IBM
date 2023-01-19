@@ -9,7 +9,8 @@ public class AIChase : MonoBehaviour
     public GameObject player;
     public float speed;
     private float distance;
-    [SerializeField] private Animator animator;
+    //[SerializeField] private Animator animator;
+    //[SerializeField] private FieldOfView fieldOfView;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,8 @@ public class AIChase : MonoBehaviour
 
         transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed + Time.deltaTime);
 
-        animator.SetFloat("Speed", Mathf.Abs(speed));
+        //animator.SetFloat("Speed", Mathf.Abs(speed));
+
+        //fieldOfView.SetOrigin(transform.position);
     }
 }
