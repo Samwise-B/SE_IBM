@@ -5,12 +5,15 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    
+    // movespeed of sprite
     public float moveSpeed = 1f;
     Rigidbody2D rb;
+    // collision offset to avoid getting past collision objects
     public float collisionOffset = 0.05f;
+    // settings for collision objects
     public ContactFilter2D movementFilter;
 
+    // movementInput direction
     Vector2 movementInput;
     Vector2 movement;
     SpriteRenderer spriteRenderer;
@@ -36,11 +39,12 @@ public class PlayerController : MonoBehaviour
     }
 
     private void FixedUpdate() {
+        // if movement not zero, try and move
         if(movementInput != Vector2.zero){
             bool success = TryMove(movementInput);
 
-            if(!success && movementInput.x > 0){
-            success = TryMove(new Vector2(movementInput.x,0));
+            if(!success){
+                success = TryMove(new Vector2(movementInput.x,0));
             
                 if(!success && movementInput.y > 0){
                     success = TryMove(new Vector2(0, movementInput.y));
@@ -70,19 +74,20 @@ public class PlayerController : MonoBehaviour
     }
 
     private bool TryMove(Vector2 direction){
-        
-            int count = rb.Cast(
-                movementInput,
-                movementFilter,
-                castCollisions,
-                moveSpeed * Time.fixedDeltaTime + collisionOffset);
+        // Check for potential collisions
+        int count = rb.Cast(
+            direction,
+            movementFilter,
+            castCollisions,
+            moveSpeed * Time.fixedDeltaTime + collisionOffset);
 
-            if (count == 0){
-                rb.MovePosition(rb.position + movementInput * moveSpeed * Time.fixedDeltaTime);
-                return true;
-            } else {
-                return false;
-            }
+        if (count == 0){
+            // position vector added with direction vector scaled by movespeed and fixed time difference
+            rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
+            return true;
+        } else {
+            return false;
+        }
         
 
     }
