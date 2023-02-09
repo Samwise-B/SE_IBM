@@ -8,76 +8,46 @@ using UnityEngine;
 
 public class AIChase : MonoBehaviour
 {
-    [SerializeField] GameObject player;
+    [SerializeField] Transform player;
+    [SerializeField] Transform enemy;
     [SerializeField] float moveSpeed;
-    [SerializeField] float agroRange;
+    
 
-    private float distanceToPlayer;
-    Rigidbody2D rb2d;
+    public FieldOfView fieldOfView;
+    private bool inView;
+    private Rigidbody2D rb;
+    private float rotationSpeed = 1;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb2d = GetComponent<Rigidbody2D>();
+        rb = this.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
-    {   
-        distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
-        if (distanceToPlayer < agroRange && distanceToPlayer > 0.01)
+    {
+        inView = fieldOfView.canSeePlayer;
+
+        if (inView)
         {
-            //chasePlayerX();
-            //chasePlayerY(); //Overwrites x movement
-            transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, moveSpeed);
-        }
-        else
-        {
-            stopChasingPlayer();
+            //Rotates the enemy to face player
+            Vector3 direction = player.position - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, 0, angle), rotationSpeed);
+
+            chasePlayer();
         }
         
     }
-    /*
-    bool canSeePlayer(float agroDistance)
-    {
-        bool val = false;
-        float castDist = agroDistance;
-        Vector2 endPos = cast
-        RaycastHit2D hit = Physics2D.Linecast(transform.position, );    
-    }
-    */
-    void chasePlayerX()
-    {
 
-        if (transform.position.x < player.transform.position.x)
-        {
-            //Enemy is on the left of player
-            rb2d.velocity = new Vector2(moveSpeed, 0);
-            transform.localScale = new Vector2(1, 1);
-        }
-        else if (transform.position.x >= player.transform.position.x)
-        {
-            //Enemy is on the right of player
-            rb2d.velocity = new Vector2(-moveSpeed, 0);
-            transform.localScale = new Vector2(1, 1);
-        }
-    }
-    void chasePlayerY() 
+    void chasePlayer()
     {
-        if (transform.position.y < player.transform.position.y)
-        {
-            rb2d.velocity = new Vector2(0, moveSpeed);
-            transform.localScale = new Vector2(1, 1);
-        }
-        else if (transform.position.y > player.transform.position.y)
-        {
-            rb2d.velocity = new Vector2(0, -moveSpeed);
-            transform.localScale = new Vector2(1, 1);
-
-        }
+        enemy.position = Vector2.MoveTowards(enemy.position, player.position, moveSpeed);
     }
+
     void stopChasingPlayer()
     {
-        rb2d.velocity = new Vector2(0, 0);
+
     }
 }
