@@ -15,13 +15,12 @@ public class AIChase : MonoBehaviour
 
     public FieldOfView fieldOfView;
     private bool inView;
-    private Rigidbody2D rb;
     private float rotationSpeed = 1;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = this.GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
