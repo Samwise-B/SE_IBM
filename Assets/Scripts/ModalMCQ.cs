@@ -30,15 +30,15 @@ public class ModalMCQ : MonoBehaviour
 
     public Canvas canvas;
 
-    public Button button1;
-    public Button button2;
-    public Button button3;
-    public Button button4;
-    public Button[] Buttons = {button1,button2,button3,button4};
+    public Button Answer1;
+    public Button Answer2;
+    public Button Answer3;
+    public Button Answer4;
 
+    public Button[] Buttons = new Button[4];
+    // public Button[] Buttons = {Answer1, Answer2, Answer3, Answer4};
 
     public TMP_Text question;
-
 
     public string correctAnswer;
     int correctAnswer_idx;
@@ -46,7 +46,11 @@ public class ModalMCQ : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Buttons[0] = Answer1;
+        Buttons[1] = Answer2;
+        Buttons[2] = Answer3;
+        Buttons[3] = Answer4;
+        
         AllQuestionStruct exampleQuestions = JsonUtility.FromJson<AllQuestionStruct>(jsonFile.text);
 
         // foreach (QuestionStruct question in exampleQuestions.AllQuestions){
@@ -67,7 +71,11 @@ public class ModalMCQ : MonoBehaviour
 
 
         correctAnswer_idx = random.Next(0, 4);
+        // Debug.Log(correctAnswer_idx);
+        // Debug.Log(Buttons[correctAnswer_idx].GetComponentInChildren<TMP_Text>().text);
+
         Buttons[correctAnswer_idx].GetComponentInChildren<TMP_Text>().text = correctAnswer;
+        // Answer4.GetComponentInChildren<TMP_Text>().text = "correctAnswer";
 
         List<string> Answers = new List<string>();
 
@@ -85,9 +93,7 @@ public class ModalMCQ : MonoBehaviour
             Answers.RemoveAt(Answer_idx);
             button.GetComponentInChildren<TMP_Text>().text = Answer;
             }
-            var colors = GetComponent<Button> ().colors;
-            colors.normalColor = Color.red;
-            GetComponent<Button> ().colors = colors;
+
             i++;
         }
 
@@ -96,23 +102,23 @@ public class ModalMCQ : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
-    int selectedAnswer;
+
+    public int selectedIndex;
+
     public void ButtonSelection(int _idx) {
-        // selectedAnswer = _idx;
-        // Buttons[_idx].colors = Color.red;
-        // // var colors = GetComponent<Button> ().colors;
-        // // colors.normalColor = Color.red;
-        // // button.colors = Color.red;
-        
+        foreach(Button button in Buttons){
+            button.GetComponent<Image>().color = Color.white;
+        }
+        Buttons[_idx].GetComponent<Image>().color = Color.blue;
+        selectedIndex = _idx;
     }
 
     public void Confirm(){
-        if(selectedAnswer == correctAnswer_idx){
-            Debug.Log("YAYAYAY");
+        if(selectedIndex == correctAnswer_idx){
+            Buttons[selectedIndex].GetComponent<Image>().color = Color.green;
         } else {
-            Debug.Log("nope");
+            Buttons[selectedIndex].GetComponent<Image>().color = Color.red;
         }
     }
 }
