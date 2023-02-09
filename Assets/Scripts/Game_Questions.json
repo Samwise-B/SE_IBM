@@ -1,0 +1,78 @@
+{
+  "AllQuestions": [
+    {
+      "Topic": "Cloud",
+      "Question": "The ability for businesses to rent computing services and software from a cloud service provider on a per unit or per month basis is best encapsulated by which of the following cloud business enablers?",
+      "CorrectAnswer": "Cost Flexibility",
+      "OtherAnswers": [
+        "Business Scalability",
+        "Masked Complexity",
+        "Market Adaptability"
+      ]
+    },
+    {
+      "Topic": "Cloud",
+      "Question": "Collaboration software such as Zoom, Mural, and Slack are all cloud services that facilitate team communication and information sharing in real-time. This benefit of cloud is best encapsulated by which of the following cloud business enablers?",
+      "OtherAnswers": [
+        "Market Adaptability",
+        "Masked Complexity",
+        "Context-Driven Variability"
+      ],
+      "CorrectAnswer": "Ecosystem Connectivity"
+    },
+    {
+      "Topic": "Cloud",
+      "Question": "Company X owns and manages all its hardware and software, which are housed in an onsite Data Center. Which of the following describes the IT infrastructure that Company X employs?",
+      "CorrectAnswer": "Traditional Infrastructure",
+      "OtherAnswers": [
+        "Public Cloud Infrastructure",
+        "Private Cloud Infrastructure",
+        "Hybrid Cloud Infrastructure"
+      ]
+    },
+    {
+      "Topic": "Cloud",
+      "Question": "An organization using Traditional IT infrastructure may choose not to adopt a cloud deployment model for all of the following reasons EXCEPT:",
+      "CorrectAnswer": "Cloud Service Providers often lock organisations into length and expensive contracts",
+      "OtherAnswers": [
+        "Cloud migration is seen as being too costly and time-consuming",
+        "The data owned by the organisation is too sensitive to be trusted to a third-party provider",
+        "The system works fine as is"
+      ]
+    },
+    {
+      "Topic": "Cloud",
+      "Question": "Infrastructure as a service (IaaS) provides companies _________________.",
+      "CorrectAnswer": "With computing resources including servers, networking, storage, and data center space on a pay-per-use basis",
+      "OtherAnswers": [
+        "Distant computers 'in the cloud' that are owned and operated by other and that connect to a users' computer via the Internet and usually a web browser",
+        "A cloud-based environment with everything required to support the complete lifecycle of building and delivering web-based (cloud) applications",
+        "All of the above"
+      ]
+    },
+    {
+      "Topic": "Cloud",
+      "Question": "Which of the following cloud delivery models provides sophisticated security and governance designed for a company’s specific requirements?",
+      "CorrectAnswer": "Private Cloud",
+      "OtherAnswers": ["Public Cloud", "Hybrid Cloud", "Edge Cloud"]
+    },
+    {
+      "Topic": "Cloud",
+      "Question": "Acme Hospital is looking to migrate some of its workloads to the cloud. After consulting with a cloud development team, they decide on a model where general information apps will be hosted on a public cloud but sensitive data such as patient records will be stored on a private cloud. Which cloud deployment model has Acme Hospital chosen?",
+      "CorrectAnswer": "Hybrid Cloud",
+      "OtherAnswers": ["Private Cloud", "Public Cloud", "Edge Cloud"]
+    },
+    {
+      "Topic": "Cloud",
+      "Question": "Which of the following cloud service types addresses the user who does not pay for the software itself? It works like a rental. They have the authorization to use it for a period of time and pay for the software that they are using.",
+      "CorrectAnswer": "Saas",
+      "OtherAnswers": ["PaaS", "IaaS", "BPaaS"]
+    },
+    {
+      "Topic": "Cloud",
+      "Question": "_______ as a service is primarily designed for developers looking to build an application but offloads infrastructure management, patches, updates, and otheradministrative tasks to the cloud service provider.",
+      "CorrectAnswer": "PaaS",
+      "OtherAnswers": ["Saas", "IaaS", "BPaaS"]
+    }
+  ]
+}

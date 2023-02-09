@@ -7,12 +7,14 @@ public class PlayerController : MonoBehaviour
 {
     
     public float moveSpeed = 1f;
+    Rigidbody2D rb;
     public float collisionOffset = 0.05f;
     public ContactFilter2D movementFilter;
 
     Vector2 movementInput;
+    Vector2 movement;
     SpriteRenderer spriteRenderer;
-    Rigidbody2D rb;
+    
     Animator animator;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
@@ -28,7 +30,9 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        // spriteRenderer = GetComponent<SpriteRenderer>();
+
+       
     }
 
     private void FixedUpdate() {
@@ -43,19 +47,25 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
+
+            animator.SetFloat("Horizontal", movement.x);
+            animator.SetFloat("Vertical", movement.y);
             animator.SetBool("isMoving", success);
+
         } else{
             animator.SetBool("isMoving", false);
         }
 
-    
+        /*
         // set direction
         if(movementInput.x < 0){
             spriteRenderer.flipX = true;
         } else if (movementInput.x > 0 ){
                 spriteRenderer.flipX = false;
         }
-        
+        */
     
     }
 
