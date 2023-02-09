@@ -44,9 +44,4 @@ public class AIChase : MonoBehaviour
     {
         enemy.position = Vector2.MoveTowards(enemy.position, player.position, moveSpeed);
     }
-
-    void stopChasingPlayer()
-    {
-
-    }
 }

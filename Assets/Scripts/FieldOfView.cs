@@ -8,7 +8,7 @@ public class FieldOfView : MonoBehaviour
     [SerializeField] [Range(1, 360)] float angle;
     [SerializeField] LayerMask targetLayer;
     [SerializeField] LayerMask obstructionLayer;
-    [SerializeField] GameObject playerRef;
+    [SerializeField] Transform player;
 
     public bool canSeePlayer = false;
 
@@ -69,7 +69,7 @@ public class FieldOfView : MonoBehaviour
         if (canSeePlayer)
         {
             Gizmos.color= Color.green;
-            Gizmos.DrawLine(transform.position, playerRef.transform.position);
+            Gizmos.DrawLine(transform.position, player.position);
         }
     }
 
