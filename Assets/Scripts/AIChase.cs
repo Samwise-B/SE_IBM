@@ -5,43 +5,112 @@ using System.Net.Mime;
 using System.Security.Cryptography;
 using System.Threading;
 using UnityEngine;
+using Pathfinding;
 
 public class AIChase : MonoBehaviour
 {
     [SerializeField] Transform player;
-    [SerializeField] Transform enemy;
+    [SerializeField] Transform FOV;
     [SerializeField] float moveSpeed;
-    
+    [SerializeField] float nextWaypointDistance;
+    [SerializeField] Vector3[] positions;
 
+    private int index;
     public FieldOfView fieldOfView;
     private bool inView;
-    private float rotationSpeed = 1;
+    private float rotationSpeed = 6f;
 
-    // Start is called before the first frame update
+    Path path;
+    int currentWaypoint = 0;
+    bool reachedEndOfPath = false;
+
+    Seeker seeker;
+    Rigidbody2D rb;
+
     void Start()
     {
+        seeker = GetComponent<Seeker>();
+        rb = GetComponent<Rigidbody2D>();
 
+        InvokeRepeating("UpdatePath", 0f, .5f);
     }
-
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        //Checks if player is in FOV
         inView = fieldOfView.canSeePlayer;
+        
+        //Checks if there is a path and checkpoints to move along
+        if (path == null)
+            return;
+        if (currentWaypoint >= path.vectorPath.Count)
+        {
+            reachedEndOfPath = true;
+            return;
+        }
+        else
+        {
+            reachedEndOfPath = false;
+        }
+        
+        if (inView)
+        {
+            //Rotates enemy FOV towards player
+            Vector3 faceDirection = player.position - FOV.position;
+            float angle = Mathf.Atan2(faceDirection.y, faceDirection.x) * Mathf.Rad2Deg;
+            FOV.rotation = Quaternion.RotateTowards(FOV.rotation, Quaternion.Euler(0, 0, angle), rotationSpeed);
+        }
+        else
+        {                
+            //Loops designated points
+            float posDistance = Vector2.Distance(rb.position, positions[index]);
+            if (posDistance <= 0.05)
+            {
+                if (index == positions.Length - 1)
+                {
+                    index = 0;
+                }
+                else
+                {
+                    index++;
+                }
+            }
+
+            //Rotates enemy FOV to the direction of the next waypoint
+            Vector3 faceDirection = path.vectorPath[currentWaypoint] - FOV.position;
+            float angle = Mathf.Atan2(faceDirection.y, faceDirection.x) * Mathf.Rad2Deg;
+            FOV.rotation = Quaternion.RotateTowards(FOV.rotation, Quaternion.Euler(0, 0, angle), rotationSpeed);                    
+        }       
+
+        rb.position = Vector2.MoveTowards(rb.position, ((Vector2)path.vectorPath[currentWaypoint]), Time.deltaTime * moveSpeed);
+        float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
+
+        if (distance < nextWaypointDistance)
+        {
+            currentWaypoint++;
+        }
+    }
+    void UpdatePath()
+    {
+        Vector3 target;
 
         if (inView)
         {
-            //Rotates the enemy to face player
-            Vector3 direction = player.position - transform.position;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, 0, angle), rotationSpeed);
-
-            chasePlayer();
+            target = player.position;
         }
-        
-    }
+        else
+        {
+            target = positions[index];
+        }
 
-    void chasePlayer()
+        if (seeker.IsDone())
+            seeker.StartPath(rb.position, target, OnPathComplete);
+    }
+    void OnPathComplete(Path p)
     {
-        enemy.position = Vector2.MoveTowards(enemy.position, player.position, moveSpeed);
+        if (!p.error)
+        {
+            path = p;
+            currentWaypoint = 0;
+        }
     }
 }
