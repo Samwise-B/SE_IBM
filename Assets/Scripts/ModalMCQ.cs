@@ -46,6 +46,8 @@ public class ModalMCQ : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        Debug.Log("START");
         Buttons[0] = Answer1;
         Buttons[1] = Answer2;
         Buttons[2] = Answer3;
@@ -53,50 +55,36 @@ public class ModalMCQ : MonoBehaviour
         
         AllQuestionStruct exampleQuestions = JsonUtility.FromJson<AllQuestionStruct>(jsonFile.text);
 
-        // foreach (QuestionStruct question in exampleQuestions.AllQuestions){
-        //     Debug.Log(question.CorrectAnswer);
-        // }
-
         Random random = new Random();
 
-        // Debug.Log(exampleQuestions.AllQuestions.Count());
-
         int RandomQuestionIndex = random.Next(0, exampleQuestions.AllQuestions.Count());
-        // int RandomQuestionIndex = 6;
-
 
         question.text = exampleQuestions.AllQuestions[RandomQuestionIndex].Question;
         correctAnswer = exampleQuestions.AllQuestions[RandomQuestionIndex].CorrectAnswer;
 
-
-
         correctAnswer_idx = random.Next(0, 4);
-        // Debug.Log(correctAnswer_idx);
-        // Debug.Log(Buttons[correctAnswer_idx].GetComponentInChildren<TMP_Text>().text);
 
         Buttons[correctAnswer_idx].GetComponentInChildren<TMP_Text>().text = correctAnswer;
-        // Answer4.GetComponentInChildren<TMP_Text>().text = "correctAnswer";
 
         List<string> Answers = new List<string>();
 
         foreach (string Answer in exampleQuestions.AllQuestions[RandomQuestionIndex].OtherAnswers){
             Answers.Add(Answer);
+            Debug.Log("Correct answer added");
         }
         
-
         int i = 0;
         foreach (Button button in Buttons){
-
             if (i!=correctAnswer_idx){
             int Answer_idx = random.Next(0, Answers.Count());
             string Answer = Answers[Answer_idx];
             Answers.RemoveAt(Answer_idx);
             button.GetComponentInChildren<TMP_Text>().text = Answer;
             }
+            Debug.Log("Other answers added");
 
             i++;
         }
-
     }
 
     // Update is called once per frame
@@ -107,6 +95,8 @@ public class ModalMCQ : MonoBehaviour
     public int selectedIndex;
 
     public void ButtonSelection(int _idx) {
+        Debug.Log("Button selected");
+
         foreach(Button button in Buttons){
             button.GetComponent<Image>().color = Color.white;
         }
@@ -115,10 +105,15 @@ public class ModalMCQ : MonoBehaviour
     }
 
     public void Confirm(){
+        Debug.Log("Confirm Clicked");
         if(selectedIndex == correctAnswer_idx){
             Buttons[selectedIndex].GetComponent<Image>().color = Color.green;
         } else {
             Buttons[selectedIndex].GetComponent<Image>().color = Color.red;
         }
+    }
+
+    public void TesterClick(){
+        Debug.Log("Tester Click");
     }
 }
