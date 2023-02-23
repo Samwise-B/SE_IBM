@@ -8,7 +8,7 @@ using System;
 public class StopWatch : MonoBehaviour
 {
 
-    bool StopWatchActive = false;
+    bool StopWatchActive = true;
     float currentTime;
     public TMP_Text currentTimeText;
 
