@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -2972,7 +2972,6 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       CosmicLegacy_PetricakeGamesPNG_12: -1606335255
-      CosmicLegacy_PetricakeGamesPNG_104: -1945751301
       CosmicLegacy_PetricakeGamesPNG_53: -1747580563
       CosmicLegacy_PetricakeGamesPNG_110: -694244616
       CosmicLegacy_PetricakeGamesPNG_120: 1169350269
@@ -3007,13 +3006,13 @@ TextureImporter:
       CosmicLegacy_PetricakeGamesPNG_48: 1647420516
       CosmicLegacy_PetricakeGamesPNG_15: -2047632766
       CosmicLegacy_PetricakeGamesPNG_13: 914172390
-      CosmicLegacy_PetricakeGamesPNG_18: -1749411230
       CosmicLegacy_PetricakeGamesPNG_65: -726532311
-      CosmicLegacy_PetricakeGamesPNG_25: 596366922
+      CosmicLegacy_PetricakeGamesPNG_18: -1749411230
       CosmicLegacy_PetricakeGamesPNG_33: 1614091772
       CosmicLegacy_PetricakeGamesPNG_42: -1854542834
-      CosmicLegacy_PetricakeGamesPNG_49: -570010151
+      CosmicLegacy_PetricakeGamesPNG_25: 596366922
       CosmicLegacy_PetricakeGamesPNG_17: -1001289144
+      CosmicLegacy_PetricakeGamesPNG_49: -570010151
       CosmicLegacy_PetricakeGamesPNG_35: 1607244003
       CosmicLegacy_PetricakeGamesPNG_74: 1339910050
       CosmicLegacy_PetricakeGamesPNG_114: -366957484
@@ -3051,8 +3050,8 @@ TextureImporter:
       CosmicLegacy_PetricakeGamesPNG_41: 242672247
       CosmicLegacy_PetricakeGamesPNG_70: -2045377563
       CosmicLegacy_PetricakeGamesPNG_82: 971708573
-      CosmicLegacy_PetricakeGamesPNG_86: -784879610
       CosmicLegacy_PetricakeGamesPNG_99: -1604386151
+      CosmicLegacy_PetricakeGamesPNG_86: -784879610
       CosmicLegacy_PetricakeGamesPNG_60: -2106770779
       CosmicLegacy_PetricakeGamesPNG_98: -1871257705
       CosmicLegacy_PetricakeGamesPNG_16: -1785378112
@@ -3101,6 +3100,7 @@ TextureImporter:
       CosmicLegacy_PetricakeGamesPNG_36: -1311743859
       CosmicLegacy_PetricakeGamesPNG_3: -2054590957
       CosmicLegacy_PetricakeGamesPNG_34: 1585288518
+      CosmicLegacy_PetricakeGamesPNG_104: -1945751301
       CosmicLegacy_PetricakeGamesPNG_92: -986291122
       CosmicLegacy_PetricakeGamesPNG_88: 124851862
       CosmicLegacy_PetricakeGamesPNG_90: -793081867
