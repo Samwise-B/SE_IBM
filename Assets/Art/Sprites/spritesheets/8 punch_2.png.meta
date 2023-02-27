@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b7fa6ab41d3e7484e95ad4277308e847
+guid: 55fe36cb9f9be4647b11251c1691eed0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 8 punch_0
+      name: 8 punch_2_0
       rect:
         serializedVersion: 2
         x: 9
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c889247ab9984529a25cba7b4fb6ac8
-      internalID: -1703531650
+      spriteID: 2b1f889d54716475882a1a66fb8f8d28
+      internalID: 693881776
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8 punch_1
+      name: 8 punch_2_1
       rect:
         serializedVersion: 2
         x: 41
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd46e35aba0f844338c0715d10fa8049
-      internalID: 1147932665
+      spriteID: d50d50227eb3847b480684a20172a77a
+      internalID: -1938738998
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8 punch_2
+      name: 8 punch_2_2
       rect:
         serializedVersion: 2
         x: 74
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 335037cb86f45496c973f9fe3b23b41a
-      internalID: 647790224
+      spriteID: 8b425b9fb760b4760b3f06afa54068c4
+      internalID: 2031914321
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8 punch_3
+      name: 8 punch_2_3
       rect:
         serializedVersion: 2
         x: 9
@@ -182,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd314fcbeeec940e0a421cde36848f8e
-      internalID: -137474042
+      spriteID: cd6336f2c74744303be328722ee16bd5
+      internalID: -1214845147
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8 punch_4
+      name: 8 punch_2_4
       rect:
         serializedVersion: 2
         x: 41
@@ -203,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fd23430479244848ba05ccdce577ee7
-      internalID: -1702852957
+      spriteID: c97bcbc49a66b4f0ab9a18eccaa4a14a
+      internalID: 375107411
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8 punch_5
+      name: 8 punch_2_5
       rect:
         serializedVersion: 2
         x: 74
@@ -224,14 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dbbbcf11e23e54d2cad9bd2804909242
-      internalID: -470129029
+      spriteID: 175a07659c3fc4656a7d9549ee8c957a
+      internalID: -1389706700
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8 punch_6
+      name: 8 punch_2_6
       rect:
         serializedVersion: 2
         x: 9
@@ -245,14 +245,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 313732cadfcf541b88eea15d81c28e7d
-      internalID: 1721092634
+      spriteID: b35b93be3a5574e3699ce07285ea3b39
+      internalID: -730285782
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8 punch_7
+      name: 8 punch_2_7
       rect:
         serializedVersion: 2
         x: 42
@@ -266,14 +266,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9043e8ca89e2c4841b13421b2010bbe8
-      internalID: 1656047450
+      spriteID: 79f3f997742c04ef38bddee3bb9ceda3
+      internalID: -2137558584
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8 punch_8
+      name: 8 punch_2_8
       rect:
         serializedVersion: 2
         x: 74
@@ -287,14 +287,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3679b79a11f6476da5e31d9c269f283
-      internalID: 614061243
+      spriteID: 07a97132671ba455995836c14b83d3c0
+      internalID: -1964958049
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8 punch_9
+      name: 8 punch_2_9
       rect:
         serializedVersion: 2
         x: 10
@@ -308,14 +308,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2523f7cc1a7014e2f9ce674deb9216c9
-      internalID: 1545055342
+      spriteID: 33ef4cd6d80e84216aea17614e4c5e64
+      internalID: 1327256576
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8 punch_10
+      name: 8 punch_2_10
       rect:
         serializedVersion: 2
         x: 42
@@ -329,14 +329,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c05889e6aa6a94886934540766044f48
-      internalID: -116827794
+      spriteID: d048bd7c554034be993fc4fad55ab366
+      internalID: 1565739020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 8 punch_11
+      name: 8 punch_2_11
       rect:
         serializedVersion: 2
         x: 74
@@ -350,8 +350,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a015a322f16146b88510b515094edd6
-      internalID: -587063840
+      spriteID: 8f387101ba0044c18a3145672d8761e2
+      internalID: 563566049
       vertices: []
       indices: 
       edges: []
@@ -367,18 +367,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      8 punch_10: -116827794
-      8 punch_9: 1545055342
-      8 punch_8: 614061243
-      8 punch_2: 647790224
-      8 punch_6: 1721092634
-      8 punch_4: -1702852957
-      8 punch_3: -137474042
-      8 punch_0: -1703531650
-      8 punch_5: -470129029
-      8 punch_11: -587063840
-      8 punch_1: 1147932665
-      8 punch_7: 1656047450
+      8 punch_2_7: -2137558584
+      8 punch_2_5: -1389706700
+      8 punch_2_11: 563566049
+      8 punch_2_9: 1327256576
+      8 punch_2_4: 375107411
+      8 punch_2_6: -730285782
+      8 punch_2_2: 2031914321
+      8 punch_2_0: 693881776
+      8 punch_2_10: 1565739020
+      8 punch_2_1: -1938738998
+      8 punch_2_3: -1214845147
+      8 punch_2_8: -1964958049
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
