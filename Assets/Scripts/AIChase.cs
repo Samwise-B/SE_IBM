@@ -6,6 +6,7 @@ using System.Security.Cryptography;
 using System.Threading;
 using UnityEngine;
 using Pathfinding;
+using UnityEngine.InputSystem.Controls;
 
 public class AIChase : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class AIChase : MonoBehaviour
     public FieldOfView fieldOfView;
     private bool inView;
     private float rotationSpeed = 6f;
+    private Vector3 faceDirection;
 
     Path path;
     int currentWaypoint = 0;
@@ -38,7 +40,7 @@ public class AIChase : MonoBehaviour
     {
         //Checks if player is in FOV
         inView = fieldOfView.canSeePlayer;
-        
+
         //Checks if there is a path and checkpoints to move along
         if (path == null)
             return;
@@ -55,7 +57,7 @@ public class AIChase : MonoBehaviour
         if (inView)
         {
             //Rotates enemy FOV towards player
-            Vector3 faceDirection = player.position - FOV.position;
+            faceDirection = player.position - FOV.position;
             float angle = Mathf.Atan2(faceDirection.y, faceDirection.x) * Mathf.Rad2Deg;
             FOV.rotation = Quaternion.RotateTowards(FOV.rotation, Quaternion.Euler(0, 0, angle), rotationSpeed);
         }
@@ -76,10 +78,10 @@ public class AIChase : MonoBehaviour
             }
 
             //Rotates enemy FOV to the direction of the next waypoint
-            Vector3 faceDirection = path.vectorPath[currentWaypoint] - FOV.position;
+            faceDirection = path.vectorPath[currentWaypoint] - FOV.position;
             float angle = Mathf.Atan2(faceDirection.y, faceDirection.x) * Mathf.Rad2Deg;
             FOV.rotation = Quaternion.RotateTowards(FOV.rotation, Quaternion.Euler(0, 0, angle), rotationSpeed);                    
-        }       
+        }
 
         rb.position = Vector2.MoveTowards(rb.position, ((Vector2)path.vectorPath[currentWaypoint]), Time.deltaTime * moveSpeed);
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
