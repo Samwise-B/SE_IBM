@@ -12,6 +12,7 @@ using System.Linq;
 public class ModalMCQ : MonoBehaviour
 {
     public TextAsset jsonFile;
+    public GameObject timer;
 
     [System.Serializable]
     public class AllQuestionStruct
@@ -133,6 +134,9 @@ public class ModalMCQ : MonoBehaviour
             Time.timeScale = 1;
         } else {
             Buttons[selectedIndex].GetComponent<Image>().color = Color.red;
+            Debug.Log(timer.GetComponent<StopWatch>().currentTime);
+            timer.GetComponent<StopWatch>().currentTime += 2;
+
         }
         Buttons[selectedIndex].GetComponent<Image>().color = Color.white;
     }

@@ -900,7 +900,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1992874986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -913,6 +913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4db072210b7a4883864db9bc247e52b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTime: 0
   currentTimeText: {fileID: 727843608}
 --- !u!114 &1992874987
 MonoBehaviour:
