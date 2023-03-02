@@ -24,6 +24,8 @@ public class AIChase : MonoBehaviour
     int currentWaypoint = 0;
     bool reachedEndOfPath = false;
 
+    float movementDir;
+
     Seeker seeker;
     Rigidbody2D rb;
     Animator animator;
@@ -97,6 +99,11 @@ public class AIChase : MonoBehaviour
         {
             currentWaypoint++;
         }
+
+        // handle animation
+        movementDir = FOV.rotation.eulerAngles.z;
+        Debug.Log(movementDir);
+        animator.SetFloat("angle", movementDir / 360);
     }
     void UpdatePath()
     {
