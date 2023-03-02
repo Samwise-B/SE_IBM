@@ -66,6 +66,9 @@ public class ModalMCQ : MonoBehaviour
     public int selectedIndex;
 
     public void getQuestion() {
+        // pause game time
+        Time.timeScale = 0;
+
         correctFlag = false;
         Buttons[0] = Answer1;
         Buttons[1] = Answer2;
@@ -126,6 +129,8 @@ public class ModalMCQ : MonoBehaviour
         if(selectedIndex == correctAnswer_idx){
             correctFlag = true;
             Buttons[selectedIndex].GetComponent<Image>().color = Color.green;
+            // resume game
+            Time.timeScale = 1;
         } else {
             Buttons[selectedIndex].GetComponent<Image>().color = Color.red;
         }

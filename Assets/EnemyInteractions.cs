@@ -36,8 +36,6 @@ public class EnemyInteractions : MonoBehaviour
     void Update()
     {
         if (triggerActive) {
-            // pause game time
-            Time.timeScale = 0;
             Debug.Log("get question");
             // get question for overlay
             overlay.GetComponent<ModalMCQ>().getQuestion();
@@ -47,8 +45,6 @@ public class EnemyInteractions : MonoBehaviour
         }
         // when correctflag is true, close overlay
         if (overlay.GetComponent<ModalMCQ>().correctFlag) {
-                // resume game
-                Time.timeScale = 1;
                 // hide enemy
                 enemy.SetActive(false);
                 // hide overlay
