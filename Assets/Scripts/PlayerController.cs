@@ -21,6 +21,13 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
+    // interaction variables
+    [SerializeField] private bool triggerActive = false;
+    public GameObject overlay;
+    private GameObject[] doors;
+    private GameObject triggerObj;
+    //public ModalMCQ overlayScript;
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,9 +40,36 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
-       
+        //Debug.Log("triggered"+ triggerActive.ToString());
+        if (triggerActive && (Input.GetKeyDown(KeyCode.E) || triggerObj.tag == "enemyCollision")) {
+            Debug.Log("get question");
+            // get question for overlay
+            overlay.GetComponent<ModalMCQ>().getQuestion();
+            // activate question overlay
+            overlay.SetActive(true);
+            triggerActive = false;
+        }
+        if (overlay.GetComponent<ModalMCQ>().correctFlag) {
+            Debug.Log("Closing overlay");
+            //overlay.SetActive(false);
+            //Debug.Log(overlay.GetComponent<ModalMCQ>().correctFlag);
+            //doors = GameObject.FindGameObjectsWithTag("doorCollision");
+            if (triggerObj.tag == "enemyCollision") {
+                triggerObj.transform.parent.gameObject.SetActive(false);
+            }
+            else {
+                triggerObj.SetActive(false);
+            }
+            //Debug.Log(doors.Length);
+            // set door object to false
+            //doors[0].SetActive(false);
+            //overlay.GetComponent<ModalMCQ>().correctFlag = false;
+            //doorCount++;
+            overlay.GetComponent<ModalMCQ>().correctFlag = false;
+            //Debug.Log(overlay.GetComponent<ModalMCQ>().correctFlag);
+            //Debug.Log(doorCount);
+        }
+          
     }
 
     private void FixedUpdate() {
@@ -94,5 +128,27 @@ public class PlayerController : MonoBehaviour
 
     void OnMove(InputValue movementValue){
         movementInput = movementValue.Get<Vector2>();
+    }
+
+    void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log("Enter Called");
+        if (other.CompareTag("doorCollision") || other.CompareTag("enemyCollision")) {
+            triggerActive = true;
+            triggerObj = other.gameObject;
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D other) {
+        if (other.CompareTag("doorCollision")) Debug.Log(overlay.GetComponent<ModalMCQ>().correctFlag);
+        // when correctflag is true, close overlay
+
+        
+    }
+
+    void OnTriggerExit2D(Collider2D other) {
+        Debug.Log("Exit Called");
+        if (other.CompareTag("doorCollision") || other.CompareTag("enemyCollision")) {
+            triggerActive = false;
+        }
     }
 }

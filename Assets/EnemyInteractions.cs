@@ -8,6 +8,7 @@ public class EnemyInteractions : MonoBehaviour
     public GameObject overlay;
     public GameObject enemy;
 
+    /*
     void OnTriggerEnter2D(Collider2D other) {
         Debug.Log("Enter Called");
         if (other.CompareTag("Player")) {
@@ -16,25 +17,7 @@ public class EnemyInteractions : MonoBehaviour
     }
 
     void OnTriggerStay2D(Collider2D other) {
-        //Debug.Log(triggerActive);
-    }
-
-    void OnTriggerExit2D(Collider2D other) {
-        Debug.Log("Exit Called");
-        if (other.CompareTag("Player")) {
-            triggerActive = false;
-        }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        Debug.Log(triggerActive);
         if (triggerActive) {
             Debug.Log("get question");
             // get question for overlay
@@ -45,12 +28,32 @@ public class EnemyInteractions : MonoBehaviour
         }
         // when correctflag is true, close overlay
         if (overlay.GetComponent<ModalMCQ>().correctFlag) {
-                // hide enemy
-                enemy.SetActive(false);
-                // hide overlay
-                overlay.SetActive(false);
-                // reset overlay correct flag
-                overlay.GetComponent<ModalMCQ>().correctFlag = false;
-            }
+            // hide enemy
+            enemy.SetActive(false);
+            // hide overlay
+            overlay.SetActive(false);
+            // reset overlay correct flag
+            overlay.GetComponent<ModalMCQ>().correctFlag = false;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other) {
+        Debug.Log("Exit Called");
+        if (other.CompareTag("Player")) {
+            triggerActive = false;
+        }
+    }
+    */
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }

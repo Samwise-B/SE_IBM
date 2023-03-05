@@ -765,6 +765,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8518709470574021898, guid: 369a5803abed244f3b8a2c3e97cd74b1, type: 3}
+      propertyPath: overlay
+      value: 
+      objectReference: {fileID: 1149481125}
+    - target: {fileID: 8518709470574021898, guid: 369a5803abed244f3b8a2c3e97cd74b1, type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 1422494026}
@@ -2750,10 +2754,9 @@ GameObject:
   m_Component:
   - component: {fileID: 340938369}
   - component: {fileID: 340938371}
-  - component: {fileID: 340938370}
   m_Layer: 0
   m_Name: Enemy Trigger
-  m_TagString: Untagged
+  m_TagString: enemyCollision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2773,21 +2776,6 @@ Transform:
   m_Father: {fileID: 1434216972}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &340938370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 340938368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21130cdb4b197874fa36eabe8ae3e493, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerActive: 0
-  overlay: {fileID: 1149481125}
-  enemy: {fileID: 1434216964}
 --- !u!61 &340938371
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8526,7 +8514,6 @@ GameObject:
   - component: {fileID: 1699860142}
   - component: {fileID: 1699860144}
   - component: {fileID: 1699860141}
-  - component: {fileID: 1699860140}
   m_Layer: 8
   m_Name: DoorCollision
   m_TagString: doorCollision
@@ -8549,21 +8536,6 @@ Transform:
   m_Father: {fileID: 613354841}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1699860140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1699860138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56bfe122c12b356449aa46d44891f76f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerActive: 0
-  overlay: {fileID: 1149481125}
-  overlayScript: {fileID: 0}
 --- !u!61 &1699860141
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8740,7 +8712,6 @@ GameObject:
   - component: {fileID: 1798298304}
   - component: {fileID: 1798298306}
   - component: {fileID: 1798298303}
-  - component: {fileID: 1798298302}
   m_Layer: 8
   m_Name: DoorCollision
   m_TagString: doorCollision
@@ -8763,21 +8734,6 @@ Transform:
   m_Father: {fileID: 613354841}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1798298302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1798298300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56bfe122c12b356449aa46d44891f76f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerActive: 0
-  overlay: {fileID: 1149481125}
-  overlayScript: {fileID: 1149481126}
 --- !u!61 &1798298303
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -85,7 +85,7 @@ public class AIChase : MonoBehaviour
             Vector3 faceDirection = path.vectorPath[currentWaypoint] - FOV.position;
             float angle = Mathf.Atan2(faceDirection.y, faceDirection.x) * Mathf.Rad2Deg;
             FOV.rotation = Quaternion.RotateTowards(FOV.rotation, Quaternion.Euler(0, 0, angle), rotationSpeed);    
-            print(faceDirection);
+            //print(faceDirection);
 
             // animation of moving in the direction of angle
             animator.SetFloat("angle", angle);
@@ -102,7 +102,7 @@ public class AIChase : MonoBehaviour
 
         // handle animation
         movementDir = FOV.rotation.eulerAngles.z;
-        Debug.Log(movementDir);
+        //Debug.Log(movementDir);
         animator.SetFloat("angle", movementDir / 360);
     }
     void UpdatePath()

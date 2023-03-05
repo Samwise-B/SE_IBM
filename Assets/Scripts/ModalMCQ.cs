@@ -14,6 +14,8 @@ public class ModalMCQ : MonoBehaviour
     public TextAsset jsonFile;
     public GameObject timer;
 
+    //private GameObject overlay;
+
     [System.Serializable]
     public class AllQuestionStruct
     {
@@ -130,6 +132,7 @@ public class ModalMCQ : MonoBehaviour
         if(selectedIndex == correctAnswer_idx){
             correctFlag = true;
             Buttons[selectedIndex].GetComponent<Image>().color = Color.green;
+            gameObject.SetActive(false);
             // resume game
             Time.timeScale = 1;
         } else {
