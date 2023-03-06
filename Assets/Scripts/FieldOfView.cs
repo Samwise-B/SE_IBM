@@ -9,13 +9,14 @@ public class FieldOfView : MonoBehaviour
     [SerializeField] [Range(1, 360)] float angle;
     [SerializeField] LayerMask targetLayer;
     [SerializeField] LayerMask obstructionLayer;
-    [SerializeField] Transform player;
 
     public bool canSeePlayer = false;
 
+    Transform player;
+
     void Start()
     {
-        
+        player = GameObject.FindWithTag("Player").transform;
     }
 
     void Update()
@@ -58,7 +59,7 @@ public class FieldOfView : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.white;
-        //UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, radius);
+        UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, radius);
 
         Vector3 angle1 = DirectionFromAngle(transform.eulerAngles.z, (-angle/2) + 90);
         Vector3 angle2 = DirectionFromAngle(transform.eulerAngles.z, (angle/2) + 90);

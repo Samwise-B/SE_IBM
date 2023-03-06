@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
             //Debug.Log(overlay.GetComponent<ModalMCQ>().correctFlag);
             //doors = GameObject.FindGameObjectsWithTag("doorCollision");
             if (triggerObj.tag == "enemyCollision") {
-                triggerObj.transform.parent.gameObject.SetActive(false);
+                triggerObj.SetActive(false);
             }
             else {
                 triggerObj.SetActive(false);

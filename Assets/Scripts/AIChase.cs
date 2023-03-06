@@ -9,7 +9,6 @@ using Pathfinding;
 
 public class AIChase : MonoBehaviour
 {
-    [SerializeField] Transform player;
     [SerializeField] Transform FOV;
     [SerializeField] float moveSpeed;
     [SerializeField] float nextWaypointDistance;
@@ -24,17 +23,18 @@ public class AIChase : MonoBehaviour
     int currentWaypoint = 0;
     bool reachedEndOfPath = false;
 
-    float movementDir;
-
+    Transform player;
     Seeker seeker;
     Rigidbody2D rb;
     Animator animator;
+    
 
     void Start()
     {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        player = GameObject.FindWithTag("Player").transform;
 
         InvokeRepeating("UpdatePath", 0f, .5f);
     }
@@ -69,7 +69,7 @@ public class AIChase : MonoBehaviour
         {                
             //Loops designated points
             float posDistance = Vector2.Distance(rb.position, positions[index]);
-            if (posDistance <= 0.05)
+            if (posDistance <= 0.01)
             {
                 if (index == positions.Length - 1)
                 {
@@ -85,7 +85,6 @@ public class AIChase : MonoBehaviour
             Vector3 faceDirection = path.vectorPath[currentWaypoint] - FOV.position;
             float angle = Mathf.Atan2(faceDirection.y, faceDirection.x) * Mathf.Rad2Deg;
             FOV.rotation = Quaternion.RotateTowards(FOV.rotation, Quaternion.Euler(0, 0, angle), rotationSpeed);    
-            //print(faceDirection);
 
             // animation of moving in the direction of angle
             animator.SetFloat("angle", angle);
@@ -93,17 +92,12 @@ public class AIChase : MonoBehaviour
         }       
 
         rb.position = Vector2.MoveTowards(rb.position, ((Vector2)path.vectorPath[currentWaypoint]), Time.deltaTime * moveSpeed);
+      
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
-
         if (distance < nextWaypointDistance)
         {
             currentWaypoint++;
         }
-
-        // handle animation
-        movementDir = FOV.rotation.eulerAngles.z;
-        //Debug.Log(movementDir);
-        animator.SetFloat("angle", movementDir / 360);
     }
     void UpdatePath()
     {

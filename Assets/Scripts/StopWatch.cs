@@ -4,18 +4,21 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using Unity.VisualScripting.FullSerializer;
 
 public class StopWatch : MonoBehaviour
 {
 
     bool StopWatchActive = true;
-    public float currentTime;
+    static float staticTime = 0;
+    public float currentTime = staticTime; 
     public TMP_Text currentTimeText;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentTime = 0;
+        currentTime = staticTime;
+        print(staticTime);
     }
 
     // Update is called once per frame
@@ -23,6 +26,7 @@ public class StopWatch : MonoBehaviour
     {
         if (StopWatchActive){
             currentTime = currentTime + Time.deltaTime;
+            staticTime = currentTime;
         }
 
         TimeSpan time = TimeSpan.FromSeconds(currentTime);
