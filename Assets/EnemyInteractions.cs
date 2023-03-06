@@ -2,20 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorController : MonoBehaviour
+public class EnemyInteractions : MonoBehaviour
 {
     [SerializeField] private bool triggerActive = false;
     public GameObject overlay;
-    private GameObject[] doors;
-    public ModalMCQ overlayScript;
-    //private int doorCount = 0;
-    //public OtherScript overlayScript = ;
+    public GameObject enemy;
 
-    void Start() {
-        
-    }
-
-/*
+    /*
     void OnTriggerEnter2D(Collider2D other) {
         Debug.Log("Enter Called");
         if (other.CompareTag("Player")) {
@@ -24,27 +17,23 @@ public class DoorController : MonoBehaviour
     }
 
     void OnTriggerStay2D(Collider2D other) {
-        //Debug.Log("triggered"+ triggerActive.ToString());
-        if (Input.GetKeyDown(KeyCode.E)) {
+        Debug.Log(triggerActive);
+        if (triggerActive) {
             Debug.Log("get question");
             // get question for overlay
             overlay.GetComponent<ModalMCQ>().getQuestion();
             // activate question overlay
             overlay.SetActive(true);
+            triggerActive = false;
         }
         // when correctflag is true, close overlay
         if (overlay.GetComponent<ModalMCQ>().correctFlag) {
+            // hide enemy
+            enemy.SetActive(false);
+            // hide overlay
             overlay.SetActive(false);
-            //Debug.Log(overlay.GetComponent<ModalMCQ>().correctFlag);
-            doors = GameObject.FindGameObjectsWithTag("doorCollision");
-            //Debug.Log(doors.Length);
-            // set door object to false
-            doors[0].SetActive(false);
-            //overlay.GetComponent<ModalMCQ>().correctFlag = false;
-            //doorCount++;
+            // reset overlay correct flag
             overlay.GetComponent<ModalMCQ>().correctFlag = false;
-            //Debug.Log(overlay.GetComponent<ModalMCQ>().correctFlag);
-            //Debug.Log(doorCount);
         }
     }
 
@@ -54,13 +43,17 @@ public class DoorController : MonoBehaviour
             triggerActive = false;
         }
     }
-*/
+    */
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
 
     // Update is called once per frame
     void Update()
-    {   
-
+    {
+        
     }
-
-
 }
