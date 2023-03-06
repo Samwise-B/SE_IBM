@@ -8,13 +8,14 @@ public class FieldOfView : MonoBehaviour
     [SerializeField] [Range(1, 360)] float angle;
     [SerializeField] LayerMask targetLayer;
     [SerializeField] LayerMask obstructionLayer;
-    [SerializeField] Transform player;
 
     public bool canSeePlayer = false;
 
+    Transform player;
+
     void Start()
     {
-        
+        player = GameObject.FindWithTag("Player").transform;
     }
 
     void Update()
