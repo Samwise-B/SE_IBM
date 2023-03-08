@@ -91,7 +91,6 @@ public class AIChase : MonoBehaviour
         }  
         float Zangle = FOV.rotation.z * Mathf.Rad2Deg;
         // animation of moving in the direction of angle
-        print(Zangle);
         animator.SetFloat("angle", Zangle);
 
         rb.position = Vector2.MoveTowards(rb.position, ((Vector2)path.vectorPath[currentWaypoint]), Time.deltaTime * moveSpeed);
