@@ -43,7 +43,7 @@ public class AIChase : MonoBehaviour
 
         //Checks if player is in FOV
         inView = fieldOfView.canSeePlayer;
-        animator.SetBool("isMoving", false);
+        animator.SetBool("isMoving", true);
 
         //Checks if there is a path and checkpoints to move along
         if (path == null)
@@ -86,10 +86,12 @@ public class AIChase : MonoBehaviour
             float angle = Mathf.Atan2(faceDirection.y, faceDirection.x) * Mathf.Rad2Deg;
             FOV.rotation = Quaternion.RotateTowards(FOV.rotation, Quaternion.Euler(0, 0, angle), rotationSpeed);    
 
-            // animation of moving in the direction of angle
-            animator.SetFloat("angle", angle);
+            
 
-        }       
+        }  
+        float Zangle = FOV.rotation.z * Mathf.Rad2Deg;
+        // animation of moving in the direction of angle
+        animator.SetFloat("angle", Zangle);
 
         rb.position = Vector2.MoveTowards(rb.position, ((Vector2)path.vectorPath[currentWaypoint]), Time.deltaTime * moveSpeed);
       

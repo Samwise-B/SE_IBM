@@ -18,7 +18,6 @@ public class StopWatch : MonoBehaviour
     void Start()
     {
         currentTime = staticTime;
-        print(staticTime);
     }
 
     // Update is called once per frame
