@@ -135,6 +135,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("doorCollision") || other.CompareTag("enemyCollision")) {
             triggerActive = true;
             triggerObj = other.gameObject;
+            Debug.Log(triggerObj.tag);
         }
     }
 
