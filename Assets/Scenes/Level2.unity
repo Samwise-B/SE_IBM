@@ -396,6 +396,11 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!4 &56820212 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6534449947527346230, guid: 369a5803abed244f3b8a2c3e97cd74b1, type: 3}
+  m_PrefabInstance: {fileID: 56820209}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &70212243
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,6 +744,7 @@ GameObject:
   - component: {fileID: 111477842}
   - component: {fileID: 111477841}
   - component: {fileID: 111477840}
+  - component: {fileID: 111477843}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -781,7 +787,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.0810862
+  orthographic size: 1
   m_Depth: 0.1
   m_CullingMask:
     serializedVersion: 2
@@ -812,6 +818,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &111477843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111477839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ccd2a338d42437dade92dd1206aa07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FollowSpeed: 5
+  yOffset: 1
+  target: {fileID: 56820212}
 --- !u!1001 &153833412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2165,6 +2186,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 0, y: 0, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 6, y: 0, z: 0}
     second:
       serializedVersion: 2
@@ -3199,8 +3230,8 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: a8f11ed4a783c0e4fbdf5cf2b7b439f2, type: 2}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 458dc1ca3b14a9d4cabe5b5e9edf7e7d, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 454d7de116439d44cab4a9b89dd32a10, type: 2}
   - m_RefCount: 1
@@ -3252,8 +3283,8 @@ Tilemap:
   m_TileSpriteArray:
   - m_RefCount: 4
     m_Data: {fileID: 1089947395, guid: ab7dc70be06e4dd4ca814d7cbdc16e2f, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -2104648641, guid: ab7dc70be06e4dd4ca814d7cbdc16e2f, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -99947669, guid: ab7dc70be06e4dd4ca814d7cbdc16e2f, type: 3}
   - m_RefCount: 1
@@ -3303,7 +3334,7 @@ Tilemap:
   - m_RefCount: 5
     m_Data: {fileID: 1647420516, guid: ab7dc70be06e4dd4ca814d7cbdc16e2f, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 143
+  - m_RefCount: 144
     m_Data:
       e00: 1
       e01: 0
@@ -3322,7 +3353,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 143
+  - m_RefCount: 144
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -89895,7 +89926,7 @@ GameObject:
   - component: {fileID: 2031032976}
   - component: {fileID: 2031032975}
   - component: {fileID: 2031032979}
-  - component: {fileID: 2031032978}
+  - component: {fileID: 2031032980}
   m_Layer: 8
   m_Name: ElevatorCollision
   m_TagString: Untagged
@@ -90055,19 +90086,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &2031032978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2031032973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ab2a0406c350504e9acb04bc47d9484, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerActive: 0
 --- !u!61 &2031032979
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -90094,6 +90112,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.19}
   m_EdgeRadius: 0
+--- !u!114 &2031032980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031032973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1118e89b7fc824f428687552e5012c2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerActive: 0
 --- !u!1001 &2073108963
 PrefabInstance:
   m_ObjectHideFlags: 0
