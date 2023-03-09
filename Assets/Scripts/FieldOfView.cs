@@ -55,7 +55,6 @@ public class FieldOfView : MonoBehaviour
             canSeePlayer = false;
         }
     }
-
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.white;
