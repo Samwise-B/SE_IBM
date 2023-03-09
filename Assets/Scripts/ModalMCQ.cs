@@ -7,6 +7,7 @@ using System;
 using UnityEngine.UI;
 using Random = System.Random;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 
 public class ModalMCQ : MonoBehaviour
@@ -38,6 +39,8 @@ public class ModalMCQ : MonoBehaviour
     public Button Answer3;
     public Button Answer4;
 
+    public Button Resource;
+
     public Button[] Buttons = new Button[4];
     // public Button[] Buttons = {Answer1, Answer2, Answer3, Answer4};
 
@@ -48,7 +51,15 @@ public class ModalMCQ : MonoBehaviour
     public string correctAnswer;
     int correctAnswer_idx;
 
+    private int RandomQuestionIndex;
+
+    private string questionTopic;
+    private string levelTopic;
+    private bool correctTopic;
+
     public bool correctFlag;
+
+    private string resourceLink;
 
     // Start is called before the first frame update
     void Start()
@@ -78,13 +89,44 @@ public class ModalMCQ : MonoBehaviour
         Buttons[2] = Answer3;
         Buttons[3] = Answer4;
 
+        //Gets the level Topic
+        string currentLevel = SceneManager.GetActiveScene().name;
+        switch (currentLevel)
+        {
+            case "Level1":
+                {
+                    levelTopic = "Cloud";
+                    break;
+                }
+            case "Level2":
+                {
+                    levelTopic = "Data Science";
+                    break;
+                }
+            default:
+                {
+                    levelTopic = "Cloud";
+                    break;
+                }
+        }
+
         // get questions from JSON
         exampleQuestions = JsonUtility.FromJson<AllQuestionStruct>(jsonFile.text);
 
         Debug.Log("getQuestion");
-        Random random = new Random();
-        // get random question index
-        int RandomQuestionIndex = random.Next(0, exampleQuestions.AllQuestions.Count());
+        Random random = new Random();  
+        correctTopic = false;
+        do {
+            //Gets random question
+            RandomQuestionIndex = random.Next(0, exampleQuestions.AllQuestions.Count());
+
+            //Checks if question is the correct topic
+            questionTopic = exampleQuestions.AllQuestions[RandomQuestionIndex].Topic;
+            if (questionTopic == levelTopic)
+            {
+                correctTopic = true;
+            }
+        } while (correctTopic == false);
 
         Debug.Log(exampleQuestions.AllQuestions[RandomQuestionIndex].Question);
         // set question text and correct answer
@@ -138,10 +180,40 @@ public class ModalMCQ : MonoBehaviour
         } else {
             Buttons[selectedIndex].GetComponent<Image>().color = Color.red;
             Debug.Log(timer.GetComponent<StopWatch>().currentTime);
-            timer.GetComponent<StopWatch>().currentTime += 2;
+            //Time added for incorrect answer - 20 seconds
+            timer.GetComponent<StopWatch>().currentTime += 20;
 
         }
         Buttons[selectedIndex].GetComponent<Image>().color = Color.white;
+    }
+
+    public void openResource()
+    {
+        //Gets the level Topic
+        string currentLevel = SceneManager.GetActiveScene().name;
+        switch (currentLevel)
+        {
+            case "Level1":
+                {
+                    //Cloud
+                    resourceLink = "https://www.ibm.com/academic/topic/cloud";
+                    break;
+                }
+            case "Level2":
+                {
+                    //Data Science
+                    resourceLink = "https://www.ibm.com/academic/topic/data-science";
+                    break;
+                }
+            default:
+                {
+                    //Defaults to cloud
+                    resourceLink = "https://www.ibm.com/academic/topic/cloud";
+                    break;
+                }
+        }
+        //Opens Url
+        Application.OpenURL(resourceLink);
     }
 
     public void TesterClick(){
