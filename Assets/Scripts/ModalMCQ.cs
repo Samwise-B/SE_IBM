@@ -138,7 +138,8 @@ public class ModalMCQ : MonoBehaviour
         } else {
             Buttons[selectedIndex].GetComponent<Image>().color = Color.red;
             Debug.Log(timer.GetComponent<StopWatch>().currentTime);
-            timer.GetComponent<StopWatch>().currentTime += 2;
+            //Time added for incorrect answer - 20 seconds
+            timer.GetComponent<StopWatch>().currentTime += 20;
 
         }
         Buttons[selectedIndex].GetComponent<Image>().color = Color.white;
