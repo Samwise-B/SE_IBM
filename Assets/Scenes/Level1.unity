@@ -25187,7 +25187,6 @@ GameObject:
   - component: {fileID: 913299212}
   - component: {fileID: 913299211}
   - component: {fileID: 913299210}
-  - component: {fileID: 913299214}
   - component: {fileID: 913299213}
   m_Layer: 0
   m_Name: Main
@@ -25277,21 +25276,6 @@ MonoBehaviour:
   FollowSpeed: 100
   yOffset: 1
   target: {fileID: 153085608}
---- !u!114 &913299214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 913299209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ccd2a338d42437dade92dd1206aa07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FollowSpeed: 2
-  yOffset: 1
-  target: {fileID: 0}
 --- !u!1 &1179694962
 GameObject:
   m_ObjectHideFlags: 0
@@ -25407,6 +25391,7 @@ MonoBehaviour:
   Answer2: {fileID: 213675081}
   Answer3: {fileID: 518814070}
   Answer4: {fileID: 1230230083}
+  Resource: {fileID: 1553788144}
   Buttons:
   - {fileID: 0}
   - {fileID: 0}
@@ -26346,7 +26331,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1553788145}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1193915350}
+        m_TargetAssemblyTypeName: ModalMCQ, Assembly-CSharp
+        m_MethodName: openResource
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1553788145
 MonoBehaviour:
   m_ObjectHideFlags: 0
