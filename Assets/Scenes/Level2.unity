@@ -849,6 +849,10 @@ PrefabInstance:
       value: enemyCollision
       objectReference: {fileID: 0}
     - target: {fileID: 7689406782080689683, guid: 8980b4d34c76e0d4784f7606cca2dfad, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 244520111}
+    - target: {fileID: 7689406782080689683, guid: 8980b4d34c76e0d4784f7606cca2dfad, type: 3}
       propertyPath: positions.Array.data[0].x
       value: 3.752
       objectReference: {fileID: 0}
@@ -922,6 +926,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8980b4d34c76e0d4784f7606cca2dfad, type: 3}
+--- !u!4 &191991905 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7689406782080689687, guid: 8980b4d34c76e0d4784f7606cca2dfad, type: 3}
+  m_PrefabInstance: {fileID: 864447631}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &244520111 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7689406782080689687, guid: 8980b4d34c76e0d4784f7606cca2dfad, type: 3}
+  m_PrefabInstance: {fileID: 153833412}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &299939486
 GameObject:
   m_ObjectHideFlags: 0
@@ -83915,6 +83929,10 @@ PrefabInstance:
       value: enemyCollision
       objectReference: {fileID: 0}
     - target: {fileID: 7689406782080689683, guid: 8980b4d34c76e0d4784f7606cca2dfad, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 1134793261}
+    - target: {fileID: 7689406782080689683, guid: 8980b4d34c76e0d4784f7606cca2dfad, type: 3}
       propertyPath: positions.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -84015,6 +84033,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: enemyCollision
       objectReference: {fileID: 0}
+    - target: {fileID: 7689406782080689683, guid: 8980b4d34c76e0d4784f7606cca2dfad, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 191991905}
     - target: {fileID: 7689406782080689683, guid: 8980b4d34c76e0d4784f7606cca2dfad, type: 3}
       propertyPath: positions.Array.size
       value: 4
@@ -84641,6 +84663,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107736328}
   m_CullTransparentMesh: 1
+--- !u!4 &1134793261 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7689406782080689687, guid: 8980b4d34c76e0d4784f7606cca2dfad, type: 3}
+  m_PrefabInstance: {fileID: 804219157}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1228052652 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7689406782080689687, guid: 8980b4d34c76e0d4784f7606cca2dfad, type: 3}
+  m_PrefabInstance: {fileID: 2073108963}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1353658292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -84656,6 +84688,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: enemyCollision
       objectReference: {fileID: 0}
+    - target: {fileID: 7689406782080689683, guid: 8980b4d34c76e0d4784f7606cca2dfad, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 1449065154}
     - target: {fileID: 7689406782080689683, guid: 8980b4d34c76e0d4784f7606cca2dfad, type: 3}
       propertyPath: positions.Array.size
       value: 4
@@ -85280,6 +85316,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417684782}
   m_CullTransparentMesh: 1
+--- !u!4 &1449065154 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7689406782080689687, guid: 8980b4d34c76e0d4784f7606cca2dfad, type: 3}
+  m_PrefabInstance: {fileID: 1353658292}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1459328249
 GameObject:
   m_ObjectHideFlags: 0
@@ -90153,6 +90194,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: enemyCollision
       objectReference: {fileID: 0}
+    - target: {fileID: 7689406782080689683, guid: 8980b4d34c76e0d4784f7606cca2dfad, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 1228052652}
     - target: {fileID: 7689406782080689683, guid: 8980b4d34c76e0d4784f7606cca2dfad, type: 3}
       propertyPath: positions.Array.size
       value: 4

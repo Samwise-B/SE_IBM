@@ -27,6 +27,7 @@ public class AIChase : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
     Animator animator;
+    public Transform enemy;
     
 
     void Start()
@@ -89,9 +90,20 @@ public class AIChase : MonoBehaviour
             
 
         }  
+
+        /*
         float Zangle = FOV.rotation.z * Mathf.Rad2Deg;
         // animation of moving in the direction of angle
         animator.SetFloat("angle", Zangle);
+        */
+
+        // change animations
+        Vector2 newLocation = ((Vector2)path.vectorPath[currentWaypoint]);
+        float horizontalX = newLocation.x - enemy.position.x;
+        float verticalY = newLocation.y - enemy.position.y; 
+        animator.SetFloat("Horizontal", horizontalX);
+        animator.SetFloat("Vertical", verticalY);
+        
 
         rb.position = Vector2.MoveTowards(rb.position, ((Vector2)path.vectorPath[currentWaypoint]), Time.deltaTime * moveSpeed);
       

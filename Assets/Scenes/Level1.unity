@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &93060434 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7689406782080689687, guid: 8980b4d34c76e0d4784f7606cca2dfad, type: 3}
+  m_PrefabInstance: {fileID: 2102215814}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &153085607
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28246,6 +28251,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: enemyCollision
       objectReference: {fileID: 0}
+    - target: {fileID: 7689406782080689683, guid: 8980b4d34c76e0d4784f7606cca2dfad, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 93060434}
     - target: {fileID: 7689406782080689684, guid: 8980b4d34c76e0d4784f7606cca2dfad, type: 3}
       propertyPath: m_IsTrigger
       value: 1
