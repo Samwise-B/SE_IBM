@@ -40,34 +40,20 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("triggered"+ triggerActive.ToString());
         if (triggerActive && (Input.GetKeyDown(KeyCode.E) || triggerObj.tag == "enemyCollision")) {
             Debug.Log("get question");
             // get question for overlay
             overlay.GetComponent<ModalMCQ>().getQuestion();
             // activate question overlay
             overlay.SetActive(true);
+            // disable trigger after MCQ display
             triggerActive = false;
         }
         if (overlay.GetComponent<ModalMCQ>().correctFlag) {
-            Debug.Log("Closing overlay");
-            //overlay.SetActive(false);
-            //Debug.Log(overlay.GetComponent<ModalMCQ>().correctFlag);
-            //doors = GameObject.FindGameObjectsWithTag("doorCollision");
-            if (triggerObj.tag == "enemyCollision") {
-                triggerObj.SetActive(false);
-            }
-            else {
-                triggerObj.SetActive(false);
-            }
-            //Debug.Log(doors.Length);
-            // set door object to false
-            //doors[0].SetActive(false);
-            //overlay.GetComponent<ModalMCQ>().correctFlag = false;
-            //doorCount++;
+            // set the trigger object to false
+            triggerObj.SetActive(false);
+            // reset the correct flag
             overlay.GetComponent<ModalMCQ>().correctFlag = false;
-            //Debug.Log(overlay.GetComponent<ModalMCQ>().correctFlag);
-            //Debug.Log(doorCount);
         }
           
     }
@@ -137,13 +123,6 @@ public class PlayerController : MonoBehaviour
             triggerObj = other.gameObject;
             Debug.Log(triggerObj.tag);
         }
-    }
-
-    void OnTriggerStay2D(Collider2D other) {
-        if (other.CompareTag("doorCollision")) Debug.Log(overlay.GetComponent<ModalMCQ>().correctFlag);
-        // when correctflag is true, close overlay
-
-        
     }
 
     void OnTriggerExit2D(Collider2D other) {
