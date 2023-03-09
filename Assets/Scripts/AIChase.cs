@@ -27,6 +27,7 @@ public class AIChase : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
     Animator animator;
+    public Transform enemy;
     
 
     void Start()
@@ -35,6 +36,7 @@ public class AIChase : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         player = GameObject.FindWithTag("Player").transform;
+        
 
         InvokeRepeating("UpdatePath", 0f, .5f);
     }
@@ -43,7 +45,7 @@ public class AIChase : MonoBehaviour
 
         //Checks if player is in FOV
         inView = fieldOfView.canSeePlayer;
-        animator.SetBool("isMoving", false);
+        animator.SetBool("isMoving", true);
 
         //Checks if there is a path and checkpoints to move along
         if (path == null)
@@ -87,10 +89,18 @@ public class AIChase : MonoBehaviour
             FOV.rotation = Quaternion.RotateTowards(FOV.rotation, Quaternion.Euler(0, 0, angle), rotationSpeed);    
 
             // animation of moving in the direction of angle
-            animator.SetFloat("angle", angle);
+            // animator.SetFloat("angle", angle);
 
         }       
 
+        // change animations
+        Vector2 newLocation = ((Vector2)path.vectorPath[currentWaypoint]);
+        float horizontalX = newLocation.x - enemy.position.x;
+        float verticalY = newLocation.y - enemy.position.y; 
+        animator.SetFloat("Horizontal", horizontalX);
+        animator.SetFloat("Vertical", verticalY);
+
+        // move the enemy in the new direction
         rb.position = Vector2.MoveTowards(rb.position, ((Vector2)path.vectorPath[currentWaypoint]), Time.deltaTime * moveSpeed);
       
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);

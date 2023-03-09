@@ -546,6 +546,11 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!4 &90999362 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6534449947527346230, guid: 369a5803abed244f3b8a2c3e97cd74b1, type: 3}
+  m_PrefabInstance: {fileID: 90999354}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &93412254
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,6 +1103,7 @@ GameObject:
   - component: {fileID: 552085824}
   - component: {fileID: 552085823}
   - component: {fileID: 552085822}
+  - component: {fileID: 552085825}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1140,7 +1146,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.34
+  orthographic size: 1
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1171,6 +1177,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &552085825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552085821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ccd2a338d42437dade92dd1206aa07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FollowSpeed: 5
+  yOffset: 1
+  target: {fileID: 90999362}
 --- !u!1 &802594215
 GameObject:
   m_ObjectHideFlags: 0
