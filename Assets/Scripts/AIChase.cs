@@ -96,22 +96,21 @@ public class AIChase : MonoBehaviour
         // animation of moving in the direction of angle
         animator.SetFloat("angle", Zangle);
         */
+        float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
+                if (distance < nextWaypointDistance)
+                {
+                    currentWaypoint++;
+                }
 
         // change animations
         Vector2 newLocation = ((Vector2)path.vectorPath[currentWaypoint]);
         float horizontalX = newLocation.x - enemy.position.x;
-        float verticalY = newLocation.y - enemy.position.y; 
+        float verticalY = newLocation.y - enemy.position.y;
         animator.SetFloat("Horizontal", horizontalX);
-        animator.SetFloat("Vertical", verticalY);
-        
+        animator.SetFloat("Vertical", verticalY);       
 
-        rb.position = Vector2.MoveTowards(rb.position, ((Vector2)path.vectorPath[currentWaypoint]), Time.deltaTime * moveSpeed);
-      
-        float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
-        if (distance < nextWaypointDistance)
-        {
-            currentWaypoint++;
-        }
+        rb.position = Vector2.MoveTowards(rb.position, ((Vector2)path.vectorPath[currentWaypoint]), Time.deltaTime * moveSpeed);    
+        
     }
     void UpdatePath()
     {
