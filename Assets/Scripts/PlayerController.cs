@@ -41,7 +41,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (triggerActive && (Input.GetKeyDown(KeyCode.E) || triggerObj.tag == "enemyCollision")) {
-            Debug.Log("get question");
             // get question for overlay
             overlay.GetComponent<ModalMCQ>().getQuestion();
             // activate question overlay
@@ -117,16 +116,13 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("Enter Called");
         if (other.CompareTag("doorCollision") || other.CompareTag("enemyCollision")) {
             triggerActive = true;
             triggerObj = other.gameObject;
-            Debug.Log(triggerObj.tag);
         }
     }
 
     void OnTriggerExit2D(Collider2D other) {
-        Debug.Log("Exit Called");
         if (other.CompareTag("doorCollision") || other.CompareTag("enemyCollision")) {
             triggerActive = false;
         }

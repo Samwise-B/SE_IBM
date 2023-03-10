@@ -24928,6 +24928,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy AI (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7689406782080689681, guid: 8980b4d34c76e0d4784f7606cca2dfad, type: 3}
+      propertyPath: m_TagString
+      value: enemyCollision
+      objectReference: {fileID: 0}
     - target: {fileID: 7689406782080689683, guid: 8980b4d34c76e0d4784f7606cca2dfad, type: 3}
       propertyPath: enemy
       value: 
@@ -24951,6 +24955,10 @@ PrefabInstance:
     - target: {fileID: 7689406782080689683, guid: 8980b4d34c76e0d4784f7606cca2dfad, type: 3}
       propertyPath: positions.Array.data[1].y
       value: -0.448
+      objectReference: {fileID: 0}
+    - target: {fileID: 7689406782080689684, guid: 8980b4d34c76e0d4784f7606cca2dfad, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7689406782080689687, guid: 8980b4d34c76e0d4784f7606cca2dfad, type: 3}
       propertyPath: m_RootOrder
@@ -25084,7 +25092,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 394.56714, y: 238.09497}
+  m_AnchoredPosition: {x: 285, y: 180}
   m_SizeDelta: {x: 73.2094, y: 50.6467}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &641960965
@@ -26196,7 +26204,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 436, y: 230}
+  m_AnchoredPosition: {x: 326.43286, y: 171.90503}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1537893565
@@ -26565,7 +26573,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 913299211}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1

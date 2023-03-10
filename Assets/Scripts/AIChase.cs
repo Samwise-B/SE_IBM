@@ -102,6 +102,16 @@ public class AIChase : MonoBehaviour
                     currentWaypoint++;
                 }
 
+        if (currentWaypoint >= path.vectorPath.Count)
+        {
+            reachedEndOfPath = true;
+            return;
+        }
+        else
+        {
+            reachedEndOfPath = false;
+        }
+
         // change animations
         Vector2 newLocation = ((Vector2)path.vectorPath[currentWaypoint]);
         float horizontalX = newLocation.x - enemy.position.x;

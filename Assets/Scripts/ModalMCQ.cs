@@ -64,11 +64,6 @@ public class ModalMCQ : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        Debug.Log("START");
-        
-        
-        //Debug.Log(exampleQuestions.AllQuestions[0].Question);
         
     }
 
@@ -113,7 +108,7 @@ public class ModalMCQ : MonoBehaviour
         // get questions from JSON
         exampleQuestions = JsonUtility.FromJson<AllQuestionStruct>(jsonFile.text);
 
-        Debug.Log("getQuestion");
+        //Debug.Log("getQuestion");
         Random random = new Random();  
         correctTopic = false;
         do {
@@ -128,7 +123,6 @@ public class ModalMCQ : MonoBehaviour
             }
         } while (correctTopic == false);
 
-        Debug.Log(exampleQuestions.AllQuestions[RandomQuestionIndex].Question);
         // set question text and correct answer
         question.text = exampleQuestions.AllQuestions[RandomQuestionIndex].Question;
         correctAnswer = exampleQuestions.AllQuestions[RandomQuestionIndex].CorrectAnswer;
@@ -141,7 +135,6 @@ public class ModalMCQ : MonoBehaviour
         List<string> Answers = new List<string>();
         foreach (string Answer in exampleQuestions.AllQuestions[RandomQuestionIndex].OtherAnswers){
             Answers.Add(Answer);
-            Debug.Log("Correct answer added");
         }
         
         // set remaining buttons to other answers
@@ -153,14 +146,12 @@ public class ModalMCQ : MonoBehaviour
             Answers.RemoveAt(Answer_idx);
             button.GetComponentInChildren<TMP_Text>().text = Answer;
             }
-            Debug.Log("Other answers added");
 
             i++;
         }
     }
 
     public void ButtonSelection(int _idx) {
-        Debug.Log("Button selected");
 
         foreach(Button button in Buttons){
             button.GetComponent<Image>().color = Color.white;
@@ -170,7 +161,6 @@ public class ModalMCQ : MonoBehaviour
     }
 
     public void Confirm(){
-        Debug.Log("Confirm Clicked");
         if(selectedIndex == correctAnswer_idx){
             correctFlag = true;
             Buttons[selectedIndex].GetComponent<Image>().color = Color.green;
@@ -179,7 +169,6 @@ public class ModalMCQ : MonoBehaviour
             Time.timeScale = 1;
         } else {
             Buttons[selectedIndex].GetComponent<Image>().color = Color.red;
-            Debug.Log(timer.GetComponent<StopWatch>().currentTime);
             //Time added for incorrect answer - 20 seconds
             timer.GetComponent<StopWatch>().currentTime += 20;
 
@@ -217,6 +206,6 @@ public class ModalMCQ : MonoBehaviour
     }
 
     public void TesterClick(){
-        Debug.Log("Tester Click");
+        //Debug.Log("Tester Click");
     }
 }
