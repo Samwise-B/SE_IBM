@@ -41,10 +41,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (triggerActive && (Input.GetKeyDown(KeyCode.E) || triggerObj.tag == "enemyCollision")) {
-            // get question for overlay
-            overlay.GetComponent<ModalMCQ>().getQuestion();
             // activate question overlay
             overlay.SetActive(true);
+            
+            // get question for overlay
+            overlay.GetComponent<ModalMCQ>().getQuestion();
+        
             // disable trigger after MCQ display
             triggerActive = false;
         }
