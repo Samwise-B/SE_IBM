@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ee5d166c5d0a241719aed495f5e5d59a
+guid: 89268c74e2165b6419dd355fde0007a1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,23 +101,11 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 9 idle_0
+      name: InstructionTiles_0
       rect:
         serializedVersion: 2
         x: 0
@@ -125,20 +113,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f4abd5467f7a4277b9a1dd26b42363b
-      internalID: -721114652
+      spriteID: 327642d1349dc6d429bd0db93245bfec
+      internalID: -895285683
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 9 idle_1
+      name: InstructionTiles_1
       rect:
         serializedVersion: 2
         x: 16
@@ -146,20 +134,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 776029b90e426461ea3b97c272575887
-      internalID: 1090065898
+      spriteID: f0ba980ec57c24141a4c5b20451ff301
+      internalID: 1859111006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 9 idle_2
+      name: InstructionTiles_2
       rect:
         serializedVersion: 2
         x: 32
@@ -167,20 +155,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8fecaddba6dd4e489cbedb0bbf51077
-      internalID: -349220340
+      spriteID: 4d92562efd5d13a4bb000ffc5f6cc257
+      internalID: -1603158303
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 9 idle_3
+      name: InstructionTiles_3
       rect:
         serializedVersion: 2
         x: 0
@@ -188,20 +176,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3067a711082c04485ac6f3df073c901c
-      internalID: -211522762
+      spriteID: 915848518f5cd8b4982077f19f7888cf
+      internalID: 1286303017
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 9 idle_4
+      name: InstructionTiles_4
       rect:
         serializedVersion: 2
         x: 16
@@ -209,20 +197,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec2779f8615ed4cc4945331975ed1391
-      internalID: 518551987
+      spriteID: 6c30aa7771276384e85b0a5c93e21fa1
+      internalID: 939949430
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 9 idle_5
+      name: InstructionTiles_5
       rect:
         serializedVersion: 2
         x: 32
@@ -230,14 +218,14 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 931b780c725d44a6ab64de89ca8bdacc
-      internalID: -236502068
+      spriteID: 83d77996a7b66e445a5ae8c147593b21
+      internalID: 1324789223
       vertices: []
       indices: 
       edges: []
@@ -253,12 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      9 idle_3: -211522762
-      9 idle_0: -721114652
-      9 idle_2: -349220340
-      9 idle_4: 518551987
-      9 idle_5: -236502068
-      9 idle_1: 1090065898
+      InstructionTiles_5: 1324789223
+      InstructionTiles_1: 1859111006
+      InstructionTiles_0: -895285683
+      InstructionTiles_2: -1603158303
+      InstructionTiles_3: 1286303017
+      InstructionTiles_4: 939949430
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

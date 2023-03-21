@@ -47,6 +47,7 @@ public class ModalMCQ : MonoBehaviour
     public TMP_Text question;
 
     public AllQuestionStruct exampleQuestions;
+    public List<QuestionStruct> questionList;
 
     public string correctAnswer;
     int correctAnswer_idx;
@@ -62,33 +63,8 @@ public class ModalMCQ : MonoBehaviour
     private string resourceLink;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-
-        Debug.Log("START");
-        
-        
-        //Debug.Log(exampleQuestions.AllQuestions[0].Question);
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
-    public int selectedIndex;
-
-    public void getQuestion() {
-        // pause game time
-        Time.timeScale = 0;
-
-        correctFlag = false;
-        Buttons[0] = Answer1;
-        Buttons[1] = Answer2;
-        Buttons[2] = Answer3;
-        Buttons[3] = Answer4;
-
         //Gets the level Topic
         string currentLevel = SceneManager.GetActiveScene().name;
         switch (currentLevel)
@@ -103,6 +79,11 @@ public class ModalMCQ : MonoBehaviour
                     levelTopic = "Data Science";
                     break;
                 }
+            case "Level6":
+                {
+                    levelTopic = "All";
+                    break;
+                }
             default:
                 {
                     levelTopic = "Cloud";
@@ -113,9 +94,41 @@ public class ModalMCQ : MonoBehaviour
         // get questions from JSON
         exampleQuestions = JsonUtility.FromJson<AllQuestionStruct>(jsonFile.text);
 
-        Debug.Log("getQuestion");
+        foreach (QuestionStruct question in exampleQuestions.AllQuestions) {
+            // if the level topic is all then get all the questions
+            if (levelTopic == "All") {
+                questionList.Add(question);
+            } // otherwise, select based on the respective level's topic
+            else if (levelTopic == question.Topic) 
+            {
+                questionList.Add(question);
+            }
+        }
+        // generate list of question structs of the correct topic for the level
+        //questionList = exampleQuestions.AllQuestions.Where<QuestionStruct>(x => x.Topic == levelTopic).ToList<QuestionStruct>();   
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+    }
+
+    public int selectedIndex;
+
+    // called by the player controller
+    public void getQuestion() {
+        // pause game time
+        Time.timeScale = 0;
+
+        correctFlag = false;
+        Buttons[0] = Answer1;
+        Buttons[1] = Answer2;
+        Buttons[2] = Answer3;
+        Buttons[3] = Answer4;
+
         Random random = new Random();  
-        correctTopic = false;
+        //correctTopic = false;
+        /*
         do {
             //Gets random question
             RandomQuestionIndex = random.Next(0, exampleQuestions.AllQuestions.Count());
@@ -127,11 +140,13 @@ public class ModalMCQ : MonoBehaviour
                 correctTopic = true;
             }
         } while (correctTopic == false);
+        */
+        
+        RandomQuestionIndex = random.Next(0, questionList.Count());
 
-        Debug.Log(exampleQuestions.AllQuestions[RandomQuestionIndex].Question);
         // set question text and correct answer
-        question.text = exampleQuestions.AllQuestions[RandomQuestionIndex].Question;
-        correctAnswer = exampleQuestions.AllQuestions[RandomQuestionIndex].CorrectAnswer;
+        question.text = questionList[RandomQuestionIndex].Question;
+        correctAnswer = questionList[RandomQuestionIndex].CorrectAnswer;
         // generate correct answer index
         correctAnswer_idx = random.Next(0, 4);
         // set correct answer to button
@@ -139,9 +154,8 @@ public class ModalMCQ : MonoBehaviour
 
         // generate list of answers
         List<string> Answers = new List<string>();
-        foreach (string Answer in exampleQuestions.AllQuestions[RandomQuestionIndex].OtherAnswers){
+        foreach (string Answer in questionList[RandomQuestionIndex].OtherAnswers){
             Answers.Add(Answer);
-            Debug.Log("Correct answer added");
         }
         
         // set remaining buttons to other answers
@@ -153,14 +167,14 @@ public class ModalMCQ : MonoBehaviour
             Answers.RemoveAt(Answer_idx);
             button.GetComponentInChildren<TMP_Text>().text = Answer;
             }
-            Debug.Log("Other answers added");
 
             i++;
         }
+        // remove question from list of questions
+        questionList.RemoveAt(RandomQuestionIndex);
     }
 
     public void ButtonSelection(int _idx) {
-        Debug.Log("Button selected");
 
         foreach(Button button in Buttons){
             button.GetComponent<Image>().color = Color.white;
@@ -170,7 +184,6 @@ public class ModalMCQ : MonoBehaviour
     }
 
     public void Confirm(){
-        Debug.Log("Confirm Clicked");
         if(selectedIndex == correctAnswer_idx){
             correctFlag = true;
             Buttons[selectedIndex].GetComponent<Image>().color = Color.green;
@@ -179,7 +192,6 @@ public class ModalMCQ : MonoBehaviour
             Time.timeScale = 1;
         } else {
             Buttons[selectedIndex].GetComponent<Image>().color = Color.red;
-            Debug.Log(timer.GetComponent<StopWatch>().currentTime);
             //Time added for incorrect answer - 20 seconds
             timer.GetComponent<StopWatch>().currentTime += 20;
 
@@ -217,6 +229,6 @@ public class ModalMCQ : MonoBehaviour
     }
 
     public void TesterClick(){
-        Debug.Log("Tester Click");
+        //Debug.Log("Tester Click");
     }
 }

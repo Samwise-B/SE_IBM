@@ -41,15 +41,16 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (triggerActive && (Input.GetKeyDown(KeyCode.E) || triggerObj.tag == "enemyCollision")) {
-            Debug.Log("get question");
-            // get question for overlay
-            overlay.GetComponent<ModalMCQ>().getQuestion();
             // activate question overlay
             overlay.SetActive(true);
+            
+            // get question for overlay
+            overlay.GetComponent<ModalMCQ>().getQuestion();
+        
             // disable trigger after MCQ display
             triggerActive = false;
         }
-        if (overlay.GetComponent<ModalMCQ>().correctFlag) {
+        if (overlay.GetComponent<ModalMCQ>().correctFlag && triggerObj.tag != "bossCollision") {
             // set the trigger object to false
             triggerObj.SetActive(false);
             // reset the correct flag
@@ -117,16 +118,14 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("Enter Called");
+        triggerObj = other.gameObject;
         if (other.CompareTag("doorCollision") || other.CompareTag("enemyCollision")) {
             triggerActive = true;
-            triggerObj = other.gameObject;
-            Debug.Log(triggerObj.tag);
+            //striggerObj = other.gameObject;
         }
     }
 
     void OnTriggerExit2D(Collider2D other) {
-        Debug.Log("Exit Called");
         if (other.CompareTag("doorCollision") || other.CompareTag("enemyCollision")) {
             triggerActive = false;
         }

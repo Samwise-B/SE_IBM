@@ -58,7 +58,7 @@ public class FieldOfView : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.white;
-        UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, radius);
+        //UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, radius);
 
         Vector3 angle1 = DirectionFromAngle(transform.eulerAngles.z, (-angle/2) + 90);
         Vector3 angle2 = DirectionFromAngle(transform.eulerAngles.z, (angle/2) + 90);

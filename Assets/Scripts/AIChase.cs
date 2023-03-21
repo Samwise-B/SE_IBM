@@ -58,7 +58,7 @@ public class AIChase : MonoBehaviour
         {
             reachedEndOfPath = false;
         }
-
+        
         if (inView)
         {
             //Rotates enemy FOV towards player
@@ -102,7 +102,6 @@ public class AIChase : MonoBehaviour
                     currentWaypoint++;
                 }
 
-        //Checks waypoint is in range
         if (currentWaypoint >= path.vectorPath.Count)
         {
             reachedEndOfPath = true;
