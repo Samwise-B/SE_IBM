@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
             // disable trigger after MCQ display
             triggerActive = false;
         }
-        if (overlay.GetComponent<ModalMCQ>().correctFlag) {
+        if (overlay.GetComponent<ModalMCQ>().correctFlag && triggerObj.tag != "bossCollision") {
             // set the trigger object to false
             triggerObj.SetActive(false);
             // reset the correct flag
@@ -118,9 +118,10 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other) {
+        triggerObj = other.gameObject;
         if (other.CompareTag("doorCollision") || other.CompareTag("enemyCollision")) {
             triggerActive = true;
-            triggerObj = other.gameObject;
+            //striggerObj = other.gameObject;
         }
     }
 
