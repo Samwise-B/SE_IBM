@@ -11,7 +11,7 @@ public class ElevatorController : MonoBehaviour
     [SerializeField] private bool triggerActive = false;
     private string currentScene;
     private string nextScene;
-    private string[] allScenes = { "Menu", "Level1", "Level2", "Level6"};
+    private string[] allScenes = {"Menu", "Level1", "Level2", "Level3", "Level4", "Level6"};
 
     void OnTriggerEnter2D(Collider2D other) {
         Debug.Log("Enter Called");

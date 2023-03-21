@@ -79,6 +79,11 @@ public class ModalMCQ : MonoBehaviour
                     levelTopic = "Data Science";
                     break;
                 }
+            case "Level6":
+                {
+                    levelTopic = "All";
+                    break;
+                }
             default:
                 {
                     levelTopic = "Cloud";
@@ -89,8 +94,18 @@ public class ModalMCQ : MonoBehaviour
         // get questions from JSON
         exampleQuestions = JsonUtility.FromJson<AllQuestionStruct>(jsonFile.text);
 
+        foreach (QuestionStruct question in exampleQuestions.AllQuestions) {
+            // if the level topic is all then get all the questions
+            if (levelTopic == "All") {
+                questionList.Add(question);
+            } // otherwise, select based on the respective level's topic
+            else if (levelTopic == question.Topic) 
+            {
+                questionList.Add(question);
+            }
+        }
         // generate list of question structs of the correct topic for the level
-        questionList = exampleQuestions.AllQuestions.Where<QuestionStruct>(x => x.Topic == levelTopic).ToList<QuestionStruct>();   
+        //questionList = exampleQuestions.AllQuestions.Where<QuestionStruct>(x => x.Topic == levelTopic).ToList<QuestionStruct>();   
     }
 
     // Update is called once per frame

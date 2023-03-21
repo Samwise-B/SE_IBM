@@ -6,6 +6,7 @@ TagManager:
   tags:
   - doorCollision
   - enemyCollision
+  - bossCollision
   layers:
   - Default
   - TransparentFX
