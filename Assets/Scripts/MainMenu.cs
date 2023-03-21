@@ -25,6 +25,24 @@ public class MainMenu : MonoBehaviour
         } 
     }
 
+    public void PlayLevelThree()
+    {
+        SceneManager.LoadScene("Level3");
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
+    }
+
+    public void PlayLevelFour()
+    {
+        SceneManager.LoadScene("Level4");
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
+    }
+
     public void togglePause() {
         if (Time.timeScale == 0) {
             Time.timeScale = 1;

@@ -975,7 +975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ccd2a338d42437dade92dd1206aa07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FollowSpeed: 5
+  FollowSpeed: 100000
   yOffset: 1
   target: {fileID: 56820212}
 --- !u!1 &125142914
@@ -1294,14 +1294,14 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 273717439}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 110627756}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: PlayLevelOne
+        m_MethodName: PlayLevelFour
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -84835,14 +84835,14 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 677052567}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 110627756}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: PlayLevelOne
+        m_MethodName: PlayLevelThree
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -91916,7 +91916,6 @@ GameObject:
   - component: {fileID: 1577836324}
   - component: {fileID: 1577836323}
   - component: {fileID: 1577836322}
-  - component: {fileID: 1577836321}
   - component: {fileID: 1577836320}
   m_Layer: 5
   m_Name: Timer
@@ -91939,18 +91938,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentTime: 0
   currentTimeText: {fileID: 1459328250}
---- !u!114 &1577836321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1577836319}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1577836322
 MonoBehaviour:
   m_ObjectHideFlags: 0
