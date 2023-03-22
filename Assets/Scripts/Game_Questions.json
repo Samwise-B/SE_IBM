@@ -139,6 +139,161 @@
           "Question": "_____________ is the stage whereby a data model is tested for its quality and put into production.",
           "CorrectAnswer": "Model Deployment",
           "OtherAnswers": [ "Data Cleansing", "Data Modeling", "Model Implementation" ]
+        },
+        {
+          "Topic": "Security",
+          "Question": "Which of the following examples best illustrates a cyber threat?",
+          "CorrectAnswer": "D: Options B and C Only",
+          "OtherAnswers": [ "A: A friend uses your Netflix login information without your knowledge",
+          "B: You receive an email from an unknown account asking you to click on a link to claim a prize.",
+          "C: Hackers infiltrate a banking website and obtain customer account information",
+          "All of the Above"
+        ]
+        },
+        {
+          "Topic": "Security",
+          "Question": "Based on the IBM X-Force report “The shifting panorama of global cybercrime”, what is the biggest motivation for cybercriminals to attack companies around the world?",
+          "CorrectAnswer": "Espionage",
+          "OtherAnswers": ["Terrorism",
+          "Hacktivism",
+          "Financial gain"]
+        },
+        {
+          "Topic": "Security",
+          "Question": "The use of a cyber-attack for research purposes, such as probing potential vulnerabilities within a company’s network or conducting penetration testing, is known as:",
+          "CorrectAnswer": "White Hat Hacking",
+          "OtherAnswers": ["Code Red Hacking",
+              "Hacktivism",
+              "Benign Hacking"
+          ]
+        },
+        {
+          "Topic": "Security",
+          "Question": "Which of the following motivators explain why cyber criminals carry out cyber-attacks?",
+          "CorrectAnswer": "E: All the above",
+          "OtherAnswers": ["A: Financial Gain", "B: Hacktivism", "C: Espionage", "D: Options A and C only"]
+        },
+        {
+          "Topic": "Security",
+          "Question": "What is true about misconfiguration as one of the most challenging types of cyber threats?",
+          "CorrectAnswer": "D: Options ‘A’ and ‘C’ Only",
+          "OtherAnswers": ["A: Incidents where attackers gain access to vulnerable systems left exposed by inexperienced administrators or users (e.g., default factory settings)",
+              "B: Employees and insiders falling for phishing emails that resulted in account takeover or access to sensitive data.",
+              "C: Erroneous permission-level attribution on cloud services and networked backups exposed sensitive data through weak or non-existent authentication.",
+              "E: All the above"
+            ]
+        },
+        {
+          "Topic": "Security",
+          "Question": "What is the chief weapon of a cyber attacker?",
+          "CorrectAnswer": "Malware",
+          "OtherAnswers": ["SQLi",
+          "Phishing",
+          "Brute Force",
+          "Physical Access"]
+        },
+        {
+          "Topic": "Security",
+          "Question": "Why are cyber-attacks significant for established companies?",
+          "CorrectAnswer": "Invites regulatory penalties.",
+          "OtherAnswers": ["The cost to businesses from cyber-attacks and their consequences, such as data breaches, are always affordable but exposes the company to internal inefficiencies which causes delays.",
+            "Enhances the brand reputation and increases customer loyalty.",
+            "All the above"
+          ]
+        },
+        {
+          "Topic": "Security",
+          "Question": "Which are the five phases for the Cyber Resilience Lifecycle based in NIST CSF?",
+          "CorrectAnswer": "Identify, Protect, Detect, Respond, Recover",
+          "OtherAnswers": ["Investigate, Remediate, Protect, Recover, Take legal action",
+          "Identify, Investigate, Remediate, Respond, Rework",
+          "None of the above"]
+        },
+        {
+          "Topic": "AI",
+          "Question": "The Turing Test is designed to:",
+          "CorrectAnswer": "Determine machine's human ability",
+          "OtherAnswers": ["Achieve artificial general intelligence",
+            "Solve the master algorithm",
+            "Build machines that are aware of themselves"]
+        },
+        {
+          "Topic": "AI",
+          "Question": "The key difference between narrow intelligence and broad intelligence is best described by which of the following phrases?",
+          "CorrectAnswer": "Narrow AI can only do a certain task - and it can do it quite well - but narrow AI can't transfer its knowledge to different sorts of problems as with Broad AI",
+          "OtherAnswers": ["Narrow and Broad intelligence is distinguished by complexity of algorithms",
+          "Broad intelligence requires huge amounts of data, whereas narrow intelligence relies on minimum data",
+          "Broad intelligence can extract meaning from images, whereas Narrow intelligence is best suited for language processing"
+        ]
+        },
+        {
+          "Topic": "AI",
+          "Question": "Which of the following best depict General AI?",
+          "CorrectAnswer": "The ability to use previous experiences to come up with new creative ideas",
+          "OtherAnswers": ["A chatbot that is also connected to Tone Analyser",
+            "Watson Machine Learning service",
+            "A system that is self-aware"
+        ]
+        },
+        {
+          "Topic": "AI",
+          "Question": "How does IBM view the impact of artificial intelligence?",
+          "CorrectAnswer": "It is here to augment human intelligence",
+          "OtherAnswers": [
+            "It is how systems predict the future",
+            "It is about automating mundane tasks that humans do",
+            "It is about the quest for artificial generel intelligence (AGI)"
+          ]
+        },
+        {
+          "Topic": "AI",
+          "Question": "AI learning process entail human and machine activities; which of the following best depicts machine-related activities?",
+          "CorrectAnswer": "Learns by adjusting weights and biases",
+          "OtherAnswers": [
+            "Identify the data-analytics problem",
+            "Define hyperparameters",
+            "Analyse the data provided by the model"
+          ]
+        },
+        {
+          "Topic": "AI",
+          "Question": "Which of the following best describes the difference between AI, Machine Learning and Deep Learning?",
+          "CorrectAnswer": "Deep Learning is a subset of Machine Learning which is a subset of AI",
+          "OtherAnswers": [
+            "Each level is differentiated by specific algorithms that power the system",
+            "They are synonyms for the same approach for the field of artificial intelligence",
+            "Machine Learning is a subset of Deep Learning which is a subset of AI"
+          ]
+        },
+        {
+          "Topic": "AI",
+          "Question": "Which of the following is predominantly used with self-driving cars?",
+          "CorrectAnswer": "Reinforcement Learning",
+          "OtherAnswers": [
+            "Supervised Learning",
+            "Unsupervised Learning",
+            "None, they use Broad AI"
+          ]
+        },
+        {
+          "Topic": "AI",
+          "Question": "Which of the following best depict or exemplify Broad AI?",
+          "CorrectAnswer": "All of the above",
+          "OtherAnswers": [
+            "Self-driving car, which happens to be a collection of narrow AI technologies",
+            "A system that supports engineers who work on complex maintenance tasks on a platform in the Atlantic",
+            "A system within a bank that analyses the balance sheet of corporate customers to recomment the best currency hedging strategy"
+          ]
+        },
+        {
+          "Topic": "AI",
+          "Question": "In 2011, an IBM system won Jeopardy! - what was the underlying architecture of the system?",
+          "CorrectAnswer": "It was founded on Unstructured Information Management Architecture (UIMA)",
+          "OtherAnswers": [
+            "It was powered by advanced neural networks",
+            "It used a brute force search engine",
+            "It had access to the Internet"
+          ]
         }
   ],
   "ResourceLinks": [

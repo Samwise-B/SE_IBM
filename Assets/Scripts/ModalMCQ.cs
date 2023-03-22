@@ -79,6 +79,16 @@ public class ModalMCQ : MonoBehaviour
                     levelTopic = "Data Science";
                     break;
                 }
+            case "Level3":
+                {
+                    levelTopic = "AI";
+                    break;
+                }
+            case "Level4": 
+                {
+                    levelTopic = "Security";
+                    break;
+                }
             case "Level6":
                 {
                     levelTopic = "All";
