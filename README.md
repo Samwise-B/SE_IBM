@@ -1,2 +1,3 @@
 # SE_IBM
-2D Game project for unity based on the paradroid game
+
+2D Game built using the Unity Engine. An education game created for our client (IBM) to complement their Skills Build platform.
