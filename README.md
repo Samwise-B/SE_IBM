@@ -39,7 +39,7 @@ This project included a comprehensive set of deliverables to showcase the final 
 
 ## Running the Game
 
-The game can be accessed (here)[https://samb4.itch.io/skillsquest-the-game], using the password: IBMSkillsBuildPreviewSE_TEAM10.
+The game can be accessed [here](https://samb4.itch.io/skillsquest-the-game), using the password: IBMSkillsBuildPreviewSE_TEAM10.
 
 Alternatively, to run or deploy the game, follow these instructions:
 
